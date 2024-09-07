@@ -1,78 +1,60 @@
-
-const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Você está assistindo a um documentário sobre aquecimento global e percebe como o aumento da temperatura está afetando a sociedade e o meio ambiente. Qual a sua principal preocupação ao ver essas informações?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
+                texto: "Preocupa-me como o aquecimento global pode agravar crises sociais e desigualdades.",
+                afirmacao: "Você está mais consciente dos impactos sociais do aquecimento global e quer saber como a tecnologia pode ajudar."
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
+                texto: "Acho que o aquecimento global é um problema grave, mas não sei o que posso fazer para ajudar.",
+                afirmacao: "Você está ciente do problema, mas sente-se incerto sobre como contribuir para a solução."
+            },
+            {
+                texto: "Não vejo o aquecimento global como uma grande ameaça comparado a outros problemas mais imediatos.",
+                afirmacao: "Você acredita que outras questões mais urgentes devem ser abordadas antes do aquecimento global."
             }
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+        enunciado: "Diante da crescente preocupação com o aquecimento global, você nota que alguns grupos na internet estão promovendo o uso de drogas como uma forma de escapar da ansiedade causada por essas notícias. Qual é sua reação a isso?",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "Eu acho que usar drogas para escapar da realidade é um problema sério e que precisamos de mais suporte psicológico e educação sobre o impacto das drogas.",
+                afirmacao: "Você decide buscar informações e apoiar iniciativas que promovem a educação sobre saúde mental e uso responsável de drogas."
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "Acredito que a internet deve ser usada para buscar alternativas mais saudáveis e eficazes para lidar com o estresse e a ansiedade.",
+                afirmacao: "Você passa a promover o uso consciente da internet e busca maneiras de apoiar soluções mais saudáveis e educativas."
+            },
+            {
+                texto: "Não vejo problema em algumas pessoas usarem drogas para lidar com o estresse, desde que isso não afete outras pessoas.",
+                afirmacao: "Você acredita que o uso de drogas é uma escolha pessoal e que cada um deve decidir como lida com o estresse."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Ao pesquisar sobre formas de lidar com o estresse e as preocupações sociais na internet, você encontra diversas soluções tecnológicas e estratégias. Como você decide usar essas informações para ajudar a sociedade?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                texto: "Crio uma campanha online para promover a educação sobre saúde mental e o impacto das drogas, utilizando a internet como uma plataforma para conscientização.",
+                afirmacao: "Você se torna um defensor da educação digital e da conscientização sobre saúde mental, contribuindo para um uso mais responsável da internet."
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
-            }
-        ]
-    },
-    {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
-        alternativas: [
-            {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Desenvolvo um aplicativo que ajuda as pessoas a se conectarem com grupos de apoio e recursos sobre o impacto do aquecimento global e o uso responsável de drogas.",
+                afirmacao: "Você utiliza suas habilidades tecnológicas para criar ferramentas que ajudam a comunidade a lidar com os desafios atuais de forma construtiva."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "Acho que a tecnologia deve ser usada principalmente para entretenimento e não necessariamente para resolver problemas sociais.",
+                afirmacao: "Você acredita que as soluções tecnológicas devem ser secundárias e que outras abordagens podem ser mais eficazes."
             }
         ]
-    },
-    {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
-        alternativas: [
-            {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
-            },
-            {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
-            }
-        ]
-    },
+    }
 ];
-
 
 let atual = 0;
 let perguntaAtual;
@@ -106,10 +88,9 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
+    caixaPerguntas.textContent = "O impacto da sociedade em 2049...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
 
 mostraPergunta();
-
